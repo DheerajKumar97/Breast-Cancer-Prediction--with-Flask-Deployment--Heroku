@@ -27,11 +27,10 @@ Notebook goal:Find the most predictive features of the data and filter it so it 
 Notebook goal: Construct predictive models to predict the diagnosis of a breast tumor. In this notebook, I construct a predictive model using SVM machine learning algorithm to predict the diagnosis of a breast tumor. The diagnosis of a breast tumor is a binary variable (benign or malignant). I also evaluate the model using confusion matrix the receiver operating curves (ROC), which are essential in assessing and interpreting the fitted model.
 
 # 5 Accuracy of the Model
-***Model	Accuracy***
+## Model	Accuracy
 
-# 0 	Logistic Regression    	:   0.947368
-# 1 	Random Forest	          :   0.976608
-# 2 	Naive Bayes            	:   0.976608
-# 3 	XGBoost	                :   0.970760
-# 4 	Decision Tree	          :   0.935673
-# 5	 Support Vector Machine	  :   0.631579
+#### 0 	Logistic Regression    	:   0.947368
+#### 1 	Random Forest	          :   0.976608
+#### 3 	XGBoost	                :   0.970760
+#### 4 	Decision Tree	          :   0.935673
+#### 5	Support Vector Machine	:   0.631579
