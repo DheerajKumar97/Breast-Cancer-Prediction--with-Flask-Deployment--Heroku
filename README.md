@@ -24,7 +24,7 @@ Notebook goal:  Explore the variables to assess how they relate to the response 
 Notebook goal:Find the most predictive features of the data and filter it so it will enhance the predictive power of the analytics model. In this notebook I use feature selection to reduce high-dimension data, feature extraction and transformation for dimensionality reduction. This is essential in preparing the data before predictive models are developed.
 
 # 4 Predictive model using Machine Learning Algorithms
-Notebook goal: Construct predictive models to predict the diagnosis of a breast tumor. In this notebook, I construct a predictive model using SVM machine learning algorithm to predict the diagnosis of a breast tumor. The diagnosis of a breast tumor is a binary variable (benign or malignant). I also evaluate the model using confusion matrix the receiver operating curves (ROC), which are essential in assessing and interpreting the fitted model.
+Notebook goal: Construct predictive models to predict the diagnosis of a breast tumor. In this notebook, I construct a predictive model using 	Random Forest and  machine learning algorithm to predict the diagnosis of a breast tumor. The diagnosis of a breast tumor is a binary variable (benign or malignant). I also evaluate the model using confusion matrix the receiver operating curves (ROC), which are essential in assessing and interpreting the fitted model.
 
 # 5 Accuracy of the Model
 ## Model	Accuracy
