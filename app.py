@@ -30,15 +30,15 @@ def predict():
     smoothness_mean = int(request.form['smoothness_mean'])
     compactness_mean = int(request.form['compactness_mean'])
     concavity_mean = int(request.form['concavity_mean'])
-    concavity_mean = int(request.form['symmetry_mean'])
-    symmetry_mean = int(request.form['radius_se'])
+    symmetry_mean = int(request.form['symmetry_mean'])
+    radius_se = int(request.form['radius_se'])
     symmetry_mean = int(request.form['texture_se'])
-    symmetry_mean = int(request.form['perimeter_se'])
-    symmetry_mean = int(request.form['area_se'])
-    symmetry_mean = int(request.form['smoothness_se'])
-    symmetry_mean = int(request.form['compactness_se'])
-    symmetry_mean = int(request.form['concavity_se'])
-    symmetry_mean = int(request.form['symmetry_se'])
+    perimeter_se = int(request.form['perimeter_se'])
+    area_se = int(request.form['area_se'])
+    smoothness_se = int(request.form['smoothness_se'])
+    compactness_se = int(request.form['compactness_se'])
+    concavity_se = int(request.form['concavity_se'])
+    symmetry_se = int(request.form['symmetry_se'])
     
     test_data = pa.DataFrame({'radius_mean':preg,'texture_mean':glucose,'perimeter_mean':pressure,'area_mean':skin,
                               'smoothness_mean':smoothness,'compactness_mean':compactness,'concavity_mean':concavity,'symmetry_mean':symmetry,'radius_se':radius,
