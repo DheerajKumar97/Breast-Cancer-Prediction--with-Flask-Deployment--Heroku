@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Breast Cancer Prediction Using Machine Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 72px 70px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 46px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  height:200%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 88px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 7px;
+  background-color: #f2f2f2;
+  padding: 60px;
+}
+</style>
+<style>
+  .left {
+  width: 300px;
+  padding: 10px;
+margin:0 80 0 0;
+}
+  	img:hover 
+  	{
+  opacity: 0.5;
+		}
+  p
+  	{
+  		color:#FF1818;
+  	}
+  h3	
+  	{
+  		color:#CC0094;
+  	}
+  	li
+  		{
+  			overflow: auto;
+  		}
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  div.container
+  {
+  	width:100%;
+  	height:50%;
+  	padding:0;
+  	
+
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  div
+  	{
+
+  	}
+  </style>
+<div>
+
+  													<!--navbar portion-->
+  <nav class="navbar navbar-expand-sm bg-dark fixed-top">
+  <a class="navbar-brand" href="#"><b>Breast Cancer Prediction</b></a>
+  <a class="navbar-brand" href="#"><b><font size="2">BY DHEERAJ KUMAR</font></b></a>
+  <ul class="navbar-nav" >
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+  </ul>
+</nav>
+<br>
+</div>
+
+<body>
+
+
+
+
+
+    <div style="background-color:#b3ffb3;padding: 20px; margin: 40px">
+
+      <form class="form-horizontal" action="/predict" method="post">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value1">Radius Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value1" placeholder="Enter radius_mean" name="value1"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value2">Texture Mean</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value2" placeholder="Enter texture_mean" name="value2"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value3">Perimeter Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value3" placeholder="Enter perimeter_mean" name="value3"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value4">Area Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value4" placeholder="Enter area_mean" name="value4"  >
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value5">Smoothness Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value5" placeholder="Enter smoothness_mean" name="value5"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value6">Compactness Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value6" placeholder="Enter compactness_mean" name="value6"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value7">Concavity Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value7" placeholder="Enter concavity_mean" name="value7"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value8">Concave Points Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value8" placeholder="Enter concave points_mean" name="value8"  >
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value9">Symmetry Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value9" placeholder="Enter symmetry_mean" name="value9"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value10">Fractal Dimension Mean:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value10" placeholder="Enter fractal_dimension_mean" name="value10"  >
+          </div>
+        </div>
+
+        
+
+        
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value11">Radius SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value11" placeholder="Enter radius_se" name="value11"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value12">Texture SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value12" placeholder="Enter texture_se" name="value12"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value13">Perimeter SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value13" placeholder="Enter perimeter_se" name="value13"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value14">Area SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value14" placeholder="Enter area_se" name="value14"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value15">Smoothness SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value15" placeholder="Enter smoothness_se" name="value15"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value16">Compactness SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value16" placeholder="Enter compactness_se" name="value16"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value17">Concavity SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value17" placeholder="Enter concavity_se" name="value17"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value18">Concave Points SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value18" placeholder="Enter concave points_se" name="value18"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value19">Symmetry SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value19" placeholder="Enter symmetry_se" name="value19"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value20">Fractal Dimension SE:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value20" placeholder="Enter fractal_dimension_se" name="value20"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value21">Radius Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value21" placeholder="Enter radius_worst" name="value21"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value22">Texture Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value22" placeholder="Enter texture_worst" name="value22"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value23">Perimeter Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value23" placeholder="Enter perimeter_worst" name="value23"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value24">Area Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value24" placeholder="Enter area_worst" name="value24"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value25">Smoothness Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value25" placeholder="Enter smoothness_worst" name="value25"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value26">Compactness Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value26" placeholder="Enter compactness_worst" name="value26"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value27">Concavity Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value27" placeholder="Enter concavity_worst" name="value27"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value28">Concave Points Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value28" placeholder="Enter concave points_worst" name="value28"  >
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value29">Symmetry Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value29" placeholder="Enter symmetry_worst" name="value29"  >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="value30">Fractal Dimension Worst:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="value30" placeholder="Enter fractal_dimension_worst" name="value30"  >
+          </div>
+        </div>
+
+        <hr>
+        <p style="text-align: center;">OR</p>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="space">Enter Space Saperated Values:</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="5" id="space" name="space">None</textarea>
+          </div>
+        </div>
+        
+
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit">
+          </div>
+        </div>
+      </form>
+      
+    </div>
+
+    <div class="well" style="margin: 40px; background-color: #ffffcc;text-align: center;">
+      Want to know about how we did , check it out <a href="https://github.com/SurajChinna/Breast-Cancer-Prediction">here</a>
+    </div>
+
+  </div>  
+
+
+</div>
+
+</body>
+</html>
