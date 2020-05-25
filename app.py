@@ -5,7 +5,8 @@ from svm_func import train_svm, test_svm, predict_svm
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+import flasgger
+from flasgger import Swagger
 
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
