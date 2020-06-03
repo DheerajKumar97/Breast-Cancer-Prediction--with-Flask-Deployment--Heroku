@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 
 from svm_func import train_svm, test_svm, predict_svm
 
